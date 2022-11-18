@@ -38,7 +38,7 @@ extension ExtString on String {
     final nameRegExp =
         //RegExp(r"^\s*([A-Za-z가-힣]{1,})[ ]?+[A-Za-z가-힣]+\.?\s*$");
         // ignore: valid_regexps
-        RegExp(r"^\s*([A-Za-z가-힣]{1,})[ ]?+[A-Za-z가-힣]+\.?\s*$");
+        RegExp(r"^\s*([A-Za-z가-힣])+[A-Za-z가-힣]+\.?\s*$");
     return nameRegExp.hasMatch(this);
   }
 

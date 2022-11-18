@@ -14,33 +14,7 @@ class AddItemPage extends StatefulWidget {
   State<AddItemPage> createState() => _AddItemPageState();
 }
 
-late TextEditingController _companyController;
-late TextEditingController _nameController;
-late TextEditingController _positionController;
-late TextEditingController _phoneController;
-late TextEditingController _emailController;
-
 class _AddItemPageState extends State<AddItemPage> {
-  @override
-  void initState() {
-    _companyController = TextEditingController();
-    _nameController = TextEditingController();
-    _positionController = TextEditingController();
-    _phoneController = TextEditingController();
-    _emailController = TextEditingController();
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _companyController.dispose();
-    _nameController.dispose();
-    _positionController.dispose();
-    _phoneController.dispose();
-    _emailController.dispose();
-    super.dispose();
-  }
-
   final _formKey = GlobalKey<FormState>();
 
   final List<String> _inputList = List.filled(5, '');
@@ -77,7 +51,7 @@ class _AddItemPageState extends State<AddItemPage> {
                           return 'Enter valid company';
                         }
                         _inputList[0] = val;
-                        return null;
+                        return 'Good';
                       },
                     ),
                     CustomFormField(
@@ -133,32 +107,6 @@ class _AddItemPageState extends State<AddItemPage> {
                         return null;
                       },
                     ),
-                    // // 회사
-                    // ItemTextfield(
-                    //   controller: _companyController,
-                    //   title: '회사',
-                    // ),
-                    // // 이름
-                    // ItemTextfield(
-                    //   controller: _nameController,
-                    //   title: '이름',
-                    // ),
-                    // // 직급
-                    // ItemTextfield(
-                    //   controller: _positionController,
-                    //   title: '직급',
-                    // ),
-                    // // 전화번호
-                    // ItemTextfield(
-                    //   controller: _phoneController,
-                    //   title: '전화번호',
-                    // ),
-                    // // 이메일
-                    // ItemTextfield(
-                    //   controller: _emailController,
-                    //   title: '이메일',
-                    // ),
-                    // 취소 / 확인
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 12),
                       child: Row(
@@ -168,14 +116,7 @@ class _AddItemPageState extends State<AddItemPage> {
                           PushButton(
                             text: '취소',
                             onTap: () {
-                              //print('취소');
-                              // _companyController.clear();
-                              // _nameController.clear();
-                              // _positionController.clear();
-                              // _phoneController.clear();
-                              // _emailController.clear();
-                              // Navigator.of(context).pop();
-                              _inputList.clear();
+                              Navigator.of(context).pop();
                             },
                             color: Colors.grey,
                           ),
@@ -183,20 +124,9 @@ class _AddItemPageState extends State<AddItemPage> {
                             color: cPurple,
                             text: '저장',
                             onTap: () {
-                              // TODO firestore 로 입력된 값을 전달
-                              // TODO login 함수 추가 글자수 조건을 달아 저장 버튼을 on off 시킴
-                              // BookModel bookModel = BookModel(
-                              //   _nameController.text,
-                              //   _companyController.text,
-                              //   _positionController.text,
-                              //   _phoneController.text,
-                              //   _emailController.text,
-                              // );
-                              // FirebaseFirestore.instance
-                              //     .collection(widget.uid!)
-                              //     .add(bookModel.toMap());
-                              // Navigator.of(context).pop();
-                              if (_formKey.currentState!.validate()) {
+                              if (!_formKey.currentState!.validate()) {
+                                null;
+                              } else {
                                 BookModel bookModel = BookModel(
                                   _inputList[0],
                                   _inputList[1],
