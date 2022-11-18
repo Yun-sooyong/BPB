@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: '임시 타이틀[Business phone book]',
       theme: ThemeData(
+        visualDensity: VisualDensity.adaptivePlatformDensity,
         primarySwatch: Colors.deepPurple,
         scaffoldBackgroundColor: cWhitegrey,
       ),

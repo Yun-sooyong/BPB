@@ -65,6 +65,7 @@ class _HomePageState extends State<HomePage> {
                   return Dismissible(
                     key: UniqueKey(),
                     background: Container(),
+                    direction: DismissDirection.endToStart,
                     secondaryBackground: Container(
                       padding: const EdgeInsets.only(right: 20),
                       alignment: Alignment.centerRight,

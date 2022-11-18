@@ -6,8 +6,8 @@ class BookModel {
   final String email;
 
   BookModel(
-    this.name,
     this.company,
+    this.name,
     this.position,
     this.phoneNum,
     this.email,
