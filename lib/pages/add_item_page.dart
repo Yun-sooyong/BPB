@@ -48,10 +48,10 @@ class _AddItemPageState extends State<AddItemPage> {
                       ],
                       validators: (val) {
                         if (!val!.isValidName) {
-                          return 'Enter valid company';
+                          return '올바른 내용을 입력해 주세요.';
                         }
                         _inputList[0] = val;
-                        return 'Good';
+                        return null;
                       },
                     ),
                     CustomFormField(
@@ -62,7 +62,7 @@ class _AddItemPageState extends State<AddItemPage> {
                       ],
                       validators: (val) {
                         if (!val!.isValidName) {
-                          return 'Enter valid name';
+                          return '올바른 내용을 입력해 주세요.';
                         }
                         _inputList[1] = val;
                         return null;
@@ -76,7 +76,7 @@ class _AddItemPageState extends State<AddItemPage> {
                       ],
                       validators: (val) {
                         if (!val!.isValidName) {
-                          return 'Enter valid position';
+                          return '올바른 내용을 입력해 주세요.';
                         }
                         _inputList[2] = val;
                         return null;
@@ -91,7 +91,7 @@ class _AddItemPageState extends State<AddItemPage> {
                       ],
                       validators: (val) {
                         if (!val!.isValidPhone) {
-                          return 'Enter valid phone';
+                          return '올바른 내용을 입력해 주세요.';
                         }
                         _inputList[3] = val;
                         return null;
@@ -101,7 +101,7 @@ class _AddItemPageState extends State<AddItemPage> {
                       hintText: '이메일',
                       validators: (val) {
                         if (!val!.isValidEmail) {
-                          return 'Enter valid email';
+                          return '올바른 내용을 입력해 주세요.';
                         }
                         _inputList[4] = val;
                         return null;
